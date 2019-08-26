@@ -2,5 +2,5 @@
   <%= task.description %>
   <%= task.deadline %>
   <%= link_to  "Edit", edit_task_path(task), remote: true %>
-  
+  <%= link_to "Delete", task, remote: true, method: :delete, data:{ confirm: "Are you sure?"} %>
 </li>
