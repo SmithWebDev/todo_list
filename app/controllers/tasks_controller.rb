@@ -1,16 +1,8 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :all_tasks, only: [:index, :create]
+  before_action :set_task, only: [:edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
-  def index
-    @tasks = Task.all
-  end
-
-  # GET /tasks/1
-  # GET /tasks/1.json
-  def show
-  end
+  #index and show actions removed 
 
   # GET /tasks/new
   def new
@@ -24,7 +16,8 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    # @task = Task.new(task_params)
+    @task = Task.create(task_params)
 
     respond_to do |format|
       if @task.save
@@ -62,6 +55,11 @@ class TasksController < ApplicationController
   end
 
   private
+
+    def all_tasks
+      @task = Task.all
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
