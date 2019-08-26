@@ -1,4 +1,6 @@
 <li>
   <%= task.description %>
   <%= task.deadline %>
+    <%= link_to  "Edit", edit_task_path(task), remote: true %>
+  
 </li>
