@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   private
 
     def all_tasks
-      @task = Task.all
+      @tasks = Task.all
     end
 
     # Use callbacks to share common setup or constraints between actions.

@@ -6,7 +6,14 @@
   Tasks
   <ul>
     <div id="tasks">
-      <%= render @tasks %>
+      <%# if @tasks == nil %>
+        <!-- <p>There are no tasks currently</p> -->
+      <%# else %>
+        <%= render @tasks %>
+      <%# end %>
     </div>
   </ul>
 </h2>
+<br><br>
+
+<div id="task-form" style="display:none;"></div>
